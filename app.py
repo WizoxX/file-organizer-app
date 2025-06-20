@@ -1,9 +1,10 @@
 import os
 import shutil
 import hashlib
-from flask import Flask, render_template, request, jsonify, send_from_directory
-
+from flask import Flask
+from your_blueprint import bp
 app = Flask(__name__)
+app.register_blueprint(bp)
 
 # Configuration
 UPLOAD_FOLDER = 'uploads'
@@ -72,4 +73,4 @@ def organize_files():
     })
 
    if __name__ == '__main__':
-       app.run(host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0', port=5000)
