@@ -2,7 +2,7 @@ import os
 import shutil
 import hashlib
 from flask import Flask
-from your_blueprint import bp
+from blueprints.main import bp
 app = Flask(__name__)
 app.register_blueprint(bp)
 
